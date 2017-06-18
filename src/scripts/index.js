@@ -7,53 +7,53 @@ import Contact              from 'components/Contact.js';
 import Header               from 'components/Header.js';
 
 import {
-    BrowserRouter as Router,
-    Route,
-    Redirect,
-    Switch
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
 } from 'react-router-dom';
 
 
 class AppInitializer {
 
-    templates = {
-        'about': About,
-        'contact': Contact
-    }
+  templates = {
+    'about': About,
+    'contact': Contact
+  }
 
-    buildRoutes(data){
-        return data.pages.map((page, i) => {
-            return(
-                <Route
-                    key={i}
-                    component={this.templates[page.slug]}
-                    path={`/${page.slug}`}
-                    exact
-                /> 
-            )
-        })     
-    }
+  buildRoutes(data){
+    return data.pages.map((page, i) => {
+      return(
+        <Route
+          key={i}
+          component={this.templates[page.slug]}
+          path={`/${page.slug}`}
+          exact
+        />
+      )
+    })
+  }
 
-    run() {
-        DataActions.getPages((response)=>{
-            render(
-                <Router>
-                    <div>
-                        <Header />
+  run() {
+    DataActions.getPages((response)=>{
+      render(
+        <Router>
+          <div>
+            <Header />
 
-                        <Switch>
-                            <Route path="/" component={ Home } exact />
+            <Switch>
+              <Route path="/" component={ Home } exact />
 
-                            {this.buildRoutes(response)}
-                            <Route render={() => { return <Redirect to="/" /> }} />
-                        </Switch> 
-                    </div>
-                </Router>
+              {this.buildRoutes(response)}
+              <Route render={() => { return <Redirect to="/" /> }} />
+            </Switch>
+          </div>
+        </Router>
 
-                , document.getElementById('app')
-            );
-        });
-    }
+        , document.getElementById('app')
+      );
+    });
+  }
 }
 
 new AppInitializer().run();
