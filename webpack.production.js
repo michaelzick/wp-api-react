@@ -1,6 +1,6 @@
-var webpack       = require('webpack');
-var path        = require('path');
-var HtmlWebpackPlugin   = require('html-webpack-plugin');
+var webpack            = require('webpack');
+var path               = require('path');
+var HtmlWebpackPlugin  = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',

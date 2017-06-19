@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --inline --progress --config webpack.dev.js",
-    "prod": "npm run clean && webpack -p --progress --config webpack.production.js",
+    "prod": "npm run clean && webpack-dev-server -p --progress --config webpack.production.js",
     "clean": "rimraf ./build/*"
   },
   "author": "",
