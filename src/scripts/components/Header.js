@@ -1,5 +1,7 @@
+'use strict';
+
 import {Link} from 'react-router-dom';
-import DataStore from 'flux/stores/DataStore.js'
+import DataStore from 'flux/stores/DataStore.js';
 
 class Header extends React.Component {
 

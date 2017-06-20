@@ -1,3 +1,5 @@
+'use strict';
+
 import alt          from 'flux/alt/alt.js';
 import DataActions  from 'flux/actions/DataActions.js';
 
