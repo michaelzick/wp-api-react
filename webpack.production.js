@@ -1,6 +1,9 @@
-var webpack            = require('webpack');
-var path               = require('path');
-var HtmlWebpackPlugin  = require('html-webpack-plugin');
+/* global __dirname, require, module */
+'use strict';
+
+const webpack            = require('webpack');
+const path               = require('path');
+const HtmlWebpackPlugin  = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -75,6 +78,6 @@ module.exports = {
         warnings: false
       },
       sourceMap: true
-    }),
+    })
   ]
-}
+};

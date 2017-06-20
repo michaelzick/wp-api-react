@@ -1,4 +1,6 @@
-import DataStore from 'flux/stores/DataStore.js'
+'use strict';
+
+import DataStore from 'flux/stores/DataStore.js';
 
 class About extends React.Component {
   render() {
