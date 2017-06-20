@@ -1,3 +1,5 @@
+'use strict';
+
 import {render}             from 'react-dom';
 import DataActions          from 'flux/actions/DataActions.js';
 
@@ -13,15 +15,14 @@ import {
   Switch
 } from 'react-router-dom';
 
-
 class AppInitializer {
 
   templates = {
     'about': About,
     'contact': Contact
-  }
+  };
 
-  buildRoutes(data){
+  buildRoutes(data) {
     return data.pages.map((page, i) => {
       return(
         <Route
@@ -31,7 +32,7 @@ class AppInitializer {
           exact
         />
       )
-    })
+    });
   }
 
   run() {
@@ -43,6 +44,7 @@ class AppInitializer {
 
             <Switch>
               <Route path="/" component={ Home } exact />
+              <Route path="/about" component={ About } exact />
 
               {this.buildRoutes(response)}
               <Route render={() => { return <Redirect to="/" /> }} />
